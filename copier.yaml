@@ -1,0 +1,20 @@
+service_name:
+  type: str
+  help: Service name
+binary_path:
+  type: str
+  help: Path to binary
+  default: /usr/sbin/{{service_name}}
+binary_options:
+  help: Command line options
+binary_nice:
+  type: int
+  help: Nice priority
+systemd_unit_name:
+  type: str
+  help: Name of the systemd unit
+  default: {{service_name}}
+systemd_description:
+  type: str
+  help: Description in unit file
+  default: {{service_name}} service

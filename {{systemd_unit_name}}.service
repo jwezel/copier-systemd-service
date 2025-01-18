@@ -1,0 +1,11 @@
+[Unit]
+Description={{systemd_description}}
+AssertPathExists={{binary_path}}
+
+[Service]
+Type=notify
+ExecStart={{binary_path}} {{binary_options}}
+{{% if binary_nice}}Nice={{binary_nice}}{{%endif%}}
+
+[Install]
+WantedBy=multi-user.target
